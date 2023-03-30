@@ -4,7 +4,7 @@ import Link from "next/link";
 export const Header = () => {
   return (
     <Box
-      h={"15vh"}
+      minH={"15vh"}
       bg={"black"}
       position={"fixed"}
       top={"0"}
@@ -14,7 +14,7 @@ export const Header = () => {
     >
       <Flex color={"white"} justify={"space-between"} align={"center"}>
         <Box>
-          <Text fontSize={"5rem"}>GB</Text>
+          <Text fontSize={"4rem"}>GB</Text>
         </Box>
         <List>
           <Flex fontSize={"1.5rem"} justify={"space-between"} gap={"20"}>

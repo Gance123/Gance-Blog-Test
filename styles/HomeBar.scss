@@ -1,0 +1,17 @@
+.homeBarText {
+  @include animation(
+    $name: home-bar,
+    $duration: 20s,
+    $iteration-count: infinite,
+    $timing-function: linear
+  );
+}
+
+@keyframes home-bar {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
