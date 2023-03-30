@@ -5,7 +5,6 @@ export const Header = () => {
   return (
     <Box
       minH={"15vh"}
-      bg={"black"}
       position={"fixed"}
       top={"0"}
       w={"100%"}

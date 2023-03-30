@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Image, Text, Flex } from "@chakra-ui/react";
+import { ScrollObserver } from "../../hooks/ScrollObserver";
 
 export const HomeTitle = () => {
+  
   return (
-    <Box>
+    <Box mb={"20vh"}>
       <Box
         h={"100vh"}
         w={"100%"}
@@ -55,7 +57,7 @@ export const HomeTitle = () => {
             fontSize={"7rem"}
             letterSpacing={"5rem"}
             color={"gray.200"}
-            p={"50px"}
+            p={"30px"}
             gap={"18"}
           >
             <Text>GANCE</Text>

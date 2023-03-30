@@ -1,10 +1,19 @@
-.homeBarText {
-  @include animation(
-    $name: home-bar,
-    $duration: 20s,
-    $iteration-count: infinite,
-    $timing-function: linear
-  );
+.home_menu {
+  .homeBarText {
+    opacity: 0;
+  }
+}
+
+.home_menu.inView {
+  & .homeBarText {
+    opacity: 1;
+    @include animation(
+      $name: home-bar,
+      $duration: 20s,
+      $iteration-count: infinite,
+      $timing-function: linear
+    );
+  }
 }
 
 @keyframes home-bar {
