@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
-import { Box, Image, Text, Flex } from "@chakra-ui/react";
-import { ScrollObserver } from "../../hooks/ScrollObserver";
+import { Box, Image, Text, Flex, Wrap } from "@chakra-ui/react";
 
 export const HomeTitle = () => {
-  
   return (
     <Box mb={"20vh"}>
       <Box
@@ -14,6 +12,22 @@ export const HomeTitle = () => {
         overflow={"hidden"}
         fontFamily={"Anton"}
       >
+        <Box
+          position={"absolute"}
+          h={"100%"}
+          w={"100%"}
+          zIndex={"100"}
+          bg={"teal"}
+          display={"grid"}
+          gridTemplateColumns={"1fr 1fr 1fr"}
+        >
+          <Box className=""></Box>
+          <Box></Box>
+          <Box></Box>
+          <Box></Box>
+          <Box></Box>
+          <Box></Box>
+        </Box>
         <Image
           src={"/images/HomeTitle-1.jpg"}
           alt={""}

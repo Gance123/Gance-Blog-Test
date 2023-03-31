@@ -1,9 +1,15 @@
-import { Box, Flex, Text, List, ListItem } from "@chakra-ui/react";
+import { useEffect } from "react";
 import Link from "next/link";
+import { Box, Flex, Text, List, ListItem } from "@chakra-ui/react";
+import { ScrollObserver } from "../../hooks/ScrollObserver";
 
 export const Header = () => {
+  useEffect(() => {
+    ScrollObserver(".invisible", ".header", { once: false });
+  }, []);
   return (
     <Box
+      className="header inView"
       minH={"15vh"}
       position={"fixed"}
       top={"0"}
@@ -11,7 +17,7 @@ export const Header = () => {
       opacity={".8"}
       p={"20px"}
     >
-      <Flex color={"white"} justify={"space-between"} align={"center"}>
+      <Flex color={"white"} align={"center"} className={"header_container"}>
         <Box>
           <Text fontSize={"4rem"}>GB</Text>
         </Box>

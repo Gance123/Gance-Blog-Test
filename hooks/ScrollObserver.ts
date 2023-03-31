@@ -1,10 +1,11 @@
-export const ScrollObserver = (els: string, opts: {}) => {
+export const ScrollObserver = (ets: string, els: string, opts: {}) => {
   const defaultOptions = {
     root: null,
     rootMargin: "0px",
     threshold: 0,
     once: true,
   };
+  const entries = document.querySelectorAll(ets);
   const elements = document.querySelectorAll(els);
   const options = Object.assign(defaultOptions, opts);
   const once = options.once;
@@ -13,19 +14,22 @@ export const ScrollObserver = (els: string, opts: {}) => {
     const callback = (entries: any, observer: any) => {
       entries.forEach((entry: any) => {
         if (entry.isIntersecting) {
+          elements.forEach((element) => {
+            element.classList.add("inView");
+          });
           entry.target.classList.add("inView");
-          console.log(entry.target.classList);
           if (once) {
             observer.unobserve(entry.target);
           }
         } else {
-          entry.target.classList.remove("inView");
-          console.log(entry.target.classList);
+          elements.forEach((element) => {
+            element.classList.remove("inView");
+          });
         }
       });
     };
     const io = new IntersectionObserver(callback);
-    elements.forEach((element) => io.observe(element));
+    entries.forEach((entry) => io.observe(entry));
   };
 
   _init();

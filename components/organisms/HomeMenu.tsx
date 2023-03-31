@@ -1,17 +1,17 @@
-import { Box, Text } from "@chakra-ui/react";
 import React, { useEffect } from "react";
+import { Box, Text } from "@chakra-ui/react";
 import { ScrollObserver } from "../../hooks/ScrollObserver";
 
 export const HomeMenu = () => {
   useEffect(() => {
-    ScrollObserver(".home_menu", { once: false });
+    ScrollObserver(".home_menu", ".home_menu", { once: false });
   }, []);
   return (
     <Box
+      className="home_menu"
       overflow={"hidden"}
       minH={"100vh"}
       position={"relative"}
-      className={"home_menu"}
     >
       <Box
         className="homeBarText"

@@ -1,11 +1,13 @@
 .home_menu {
   .homeBarText {
+    transition: all 1s;
     opacity: 0;
   }
 }
 
 .home_menu.inView {
   & .homeBarText {
+    transition: all 1s;
     opacity: 1;
     @include animation(
       $name: home-bar,
