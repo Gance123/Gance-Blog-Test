@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import { Box, Image, Text, Flex, Wrap } from "@chakra-ui/react";
+import React from "react";
+import { Box, Image, Text, Flex } from "@chakra-ui/react";
 
 export const HomeTitle = () => {
   return (
-    <Box mb={"20vh"}>
+    <Box mb={"20vh"} className="home_title">
       <Box
         h={"100vh"}
         w={"100%"}
@@ -17,19 +17,29 @@ export const HomeTitle = () => {
           h={"100%"}
           w={"100%"}
           zIndex={"100"}
-          bg={"teal"}
+          bg={"transparent"}
           display={"grid"}
-          gridTemplateColumns={"1fr 1fr 1fr"}
+          gridTemplateColumns={"repeat(5, 1fr)"}
         >
-          <Box className=""></Box>
-          <Box></Box>
-          <Box></Box>
-          <Box></Box>
-          <Box></Box>
-          <Box></Box>
+          <Box className="item">
+            <Box></Box>
+          </Box>
+          <Box className="item">
+            <Box></Box>
+          </Box>
+          <Box className="item">
+            <Box></Box>
+          </Box>
+          <Box className="item">
+            <Box></Box>
+          </Box>
+          <Box className="item">
+            <Box></Box>
+          </Box>
         </Box>
         <Image
-          src={"/images/HomeTitle-1.jpg"}
+          className="home_title_image"
+          src={"https://source.unsplash.com/random"}
           alt={""}
           objectFit={"cover"}
           position={"absolute"}
@@ -39,9 +49,10 @@ export const HomeTitle = () => {
           h={"100%"}
         />
         <Image
+          className="home_title_effect"
           src={"/images/effect2.jpeg"}
           mixBlendMode={"lighten"}
-          opacity={".7"}
+          opacity={".6"}
           alt={""}
           objectFit={"cover"}
           position={"absolute"}

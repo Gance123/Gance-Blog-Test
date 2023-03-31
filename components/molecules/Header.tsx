@@ -18,7 +18,12 @@ export const Header = () => {
       p={"20px"}
     >
       <Flex color={"white"} align={"center"} className={"header_container"}>
-        <Box>
+        <Box
+          cursor={"pointer"}
+          onClick={() => {
+            window.location.href = "/";
+          }}
+        >
           <Text fontSize={"4rem"}>GB</Text>
         </Box>
         <List>
