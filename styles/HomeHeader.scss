@@ -1,8 +1,8 @@
 .header.inView {
-  transition: all 1s;
+  transition: all 0.5s;
   background-color: transparent;
   & > .header_container {
-    transition: all .5s;
+    transition: all 0.5s;
     justify-content: space-around;
     gap: 300px;
   }
@@ -10,9 +10,9 @@
 
 .header {
   background: #000;
-  transition: all 1s;
+  transition: all 0.5s;
   & > .header_container {
-    transition: all .5s;
+    transition: all 0.5s;
     justify-content: space-around;
     gap: 30px;
   }

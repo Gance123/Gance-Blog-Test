@@ -17,6 +17,7 @@ export const Header = () => {
       w={"100%"}
       opacity={".8"}
       p={"20px"}
+      display={{ base: "none", md: "block" }}
     >
       <Flex color={"white"} align={"center"} className={"header_container"}>
         <Box

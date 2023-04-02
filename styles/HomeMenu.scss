@@ -1,0 +1,29 @@
+.circle.inView {
+  transition: all 1s;
+  background-color: transparent;
+  @include animation(
+    $name: kf-home-circle,
+    $iteration-count: infinite,
+    $duration: 8s,
+    $timing-function: linear
+  );
+}
+
+.circle {
+  transition: all 1s;
+  background-color: rgba(0, 0, 0, 0.3);
+  @include animation(
+    $name: kf-home-circle,
+    $iteration-count: infinite,
+    $duration: 8s,
+    $timing-function: linear
+  );
+}
+@keyframes kf-home-circle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
