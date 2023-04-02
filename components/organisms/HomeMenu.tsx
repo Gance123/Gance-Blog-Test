@@ -29,7 +29,7 @@ export const HomeMenu = () => {
         position={"fixed"}
         bottom={"0"}
       >
-        <Text display={"inline-block"}>Welcome to Gance Blog</Text>
+        Welcome to Gance Blog
       </Box>
     </Box>
   );
