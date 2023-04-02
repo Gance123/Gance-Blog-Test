@@ -1,16 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Image, Text, Flex } from "@chakra-ui/react";
+import { ScrollObserver } from "../../hooks/ScrollObserver";
+import { SlideItem } from "../atoms/SlideItem";
 
 export const HomeTitle = () => {
+  useEffect(() => {
+    const { init } = ScrollObserver(
+      ".home_title",
+      ".home_title",
+      {
+        once: false,
+      },
+      "https://source.unsplash.com/random"
+    );
+    init();
+  }, []);
   return (
-    <Box mb={"20vh"} className="home_title">
+    <Box mb={"20vh"}>
       <Box
+        className="home_title"
         h={"100vh"}
         w={"100%"}
         position={"relative"}
         zIndex={"-1"}
         overflow={"hidden"}
-        fontFamily={"Anton"}
       >
         <Box
           position={"absolute"}
@@ -19,26 +32,19 @@ export const HomeTitle = () => {
           zIndex={"100"}
           bg={"transparent"}
           display={"grid"}
-          gridTemplateColumns={"repeat(5, 1fr)"}
+          gridTemplateColumns={"repeat(7, 1fr)"}
         >
-          <Box className="item">
-            <Box></Box>
-          </Box>
-          <Box className="item">
-            <Box></Box>
-          </Box>
-          <Box className="item">
-            <Box></Box>
-          </Box>
-          <Box className="item">
-            <Box></Box>
-          </Box>
-          <Box className="item">
-            <Box></Box>
-          </Box>
+          <SlideItem font={"G"} font2={"B"} />
+          <SlideItem font={"A"} font2={"L"} />
+          <SlideItem font={"N"} font2={"O"} />
+          <SlideItem font={"C"} font2={"G"} />
+          <SlideItem font={"E"} />
+          <SlideItem />
+          <SlideItem />
         </Box>
         <Image
           className="home_title_image"
+          opacity={"0"}
           src={"https://source.unsplash.com/random"}
           alt={""}
           objectFit={"cover"}
@@ -52,7 +58,7 @@ export const HomeTitle = () => {
           className="home_title_effect"
           src={"/images/effect2.jpeg"}
           mixBlendMode={"lighten"}
-          opacity={".6"}
+          opacity={"0"}
           alt={""}
           objectFit={"cover"}
           position={"absolute"}
@@ -70,25 +76,6 @@ export const HomeTitle = () => {
           h={"100%"}
           opacity={".1"}
         ></Box>
-        <Box
-          position={"absolute"}
-          top={"30%"}
-          left={"0%"}
-          zIndex={"100"}
-          mixBlendMode={"overlay"}
-        >
-          <Flex
-            direction={"column"}
-            fontSize={"7rem"}
-            letterSpacing={"5rem"}
-            color={"gray.200"}
-            p={"30px"}
-            gap={"18"}
-          >
-            <Text>GANCE</Text>
-            <Text>BLOG</Text>
-          </Flex>
-        </Box>
       </Box>
     </Box>
   );

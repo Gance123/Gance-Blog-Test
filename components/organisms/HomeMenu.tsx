@@ -4,7 +4,10 @@ import { ScrollObserver } from "../../hooks/ScrollObserver";
 
 export const HomeMenu = () => {
   useEffect(() => {
-    ScrollObserver(".home_menu", ".home_menu", { once: false });
+    const { init } = ScrollObserver(".home_menu", ".home_menu", {
+      once: false,
+    });
+    init();
   }, []);
   return (
     <Box

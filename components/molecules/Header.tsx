@@ -5,7 +5,8 @@ import { ScrollObserver } from "../../hooks/ScrollObserver";
 
 export const Header = () => {
   useEffect(() => {
-    ScrollObserver(".invisible", ".header", { once: false });
+    const { init } = ScrollObserver(".invisible", ".header", { once: false });
+    init();
   }, []);
   return (
     <Box

@@ -1,4 +1,9 @@
-export const ScrollObserver = (ets: string, els: string, opts: {}) => {
+export const ScrollObserver = (
+  ets: string,
+  els: string,
+  opts: {},
+  url?: string
+) => {
   const defaultOptions = {
     root: null,
     rootMargin: "0px",
@@ -10,7 +15,7 @@ export const ScrollObserver = (ets: string, els: string, opts: {}) => {
   const options = Object.assign(defaultOptions, opts);
   const once = options.once;
 
-  const _init = () => {
+  const init = () => {
     const callback = (entries: any, observer: any) => {
       entries.forEach((entry: any) => {
         if (entry.isIntersecting) {
@@ -32,5 +37,5 @@ export const ScrollObserver = (ets: string, els: string, opts: {}) => {
     entries.forEach((entry) => io.observe(entry));
   };
 
-  _init();
+  return { init };
 };

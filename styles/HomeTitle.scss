@@ -1,4 +1,4 @@
-.home_title {
+.home_title.inView {
   & .item {
     position: relative;
     overflow: hidden;
@@ -6,56 +6,83 @@
       position: absolute;
       height: 100%;
       width: 100%;
-      background-color: black;
+      background-color: #11161f;
       top: 0;
       left: 0;
-      transform: translateX(-100%);
+      transform: translateX(-101%);
     }
-    @for $i from 1 through 5 {
+    & > p {
+      transform: translateX(-101%);
+    }
+    @for $i from 1 through 7 {
       &:nth-child(#{$i}) {
         & > div {
-          animation: 1.5s kf-home-title;
-          animation-delay: 0.15s * $i;
+          animation: 7s kf-home-item;
+          animation-delay: 0.12s * $i;
+        }
+        & > p {
+          animation: 7s kf-home-item-2 forwards;
+          animation-delay: 0.12s * $i;
         }
       }
     }
   }
+
   & .home_title_image {
     opacity: 0;
-    @include animation($name: kf-home-title-image, $delay: 1.3s);
+    @include animation($name: kf-home-title-image, $delay: 2.2s);
   }
+
   & .home_title_effect {
     opacity: 0;
-    @include animation($name: kf-home-title-effect, $delay: 1.3s);
+    @include animation($name: kf-home-title-effect, $delay: 2.2s);
   }
 }
 
-@keyframes kf-home-title {
+@keyframes kf-home-item {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-101%);
+  }
+  25% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(101%);
+  }
+  100% {
+    transform: translateX(101%);
+  }
+}
+@keyframes kf-home-item-2 {
+  0% {
+    transform: translateX(-101%);
+  }
+  25% {
+    transform: translateX(0%);
   }
   50% {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
 }
+
 @keyframes kf-home-title-image {
   0% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
   }
 }
+
 @keyframes kf-home-title-effect {
   0% {
     opacity: 0;
   }
 
   100% {
-    opacity: .4;
+    opacity: 0.4;
   }
 }
