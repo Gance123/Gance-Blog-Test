@@ -1,19 +1,99 @@
 .header.inView {
-  transition: all 0.5s;
-  background-color: transparent;
-  & > .header_container {
-    transition: all 0.5s;
-    justify-content: space-around;
-    gap: 300px;
+  & .header_lists {
+    background-color: transparent;
+    & .header_list {
+      background-color: transparent;
+    }
+  }
+}
+.header {
+  & .header_lists {
+    transition: 0.3s;
+    background-color: #000;
   }
 }
 
-.header {
-  background: #000;
-  transition: all 0.5s;
-  & > .header_container {
-    transition: all 0.5s;
-    justify-content: space-around;
-    gap: 30px;
+.header.clm-2 {
+  & .header_lists {
+    background-color: transparent;
+    & .header_list {
+      background-color: #000;
+      animation: 1s kf-home-list forwards;
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          animation-delay: 0.1s * $i;
+        }
+      }
+    }
+  }
+}
+
+.circle_menu {
+  transition: all 1s;
+  @include animation(
+    $name: kf-home-circle,
+    $iteration-count: infinite,
+    $duration: 8s,
+    $timing-function: linear
+  );
+}
+.circle_menu.clm-2 {
+  opacity: 1;
+}
+
+.menu_button {
+  transform: translateX(-100%);
+  overflow: hidden;
+  padding-right: 10px;
+  & > div {
+    transform: translateX(-100%);
+    height: 3px;
+    width: 30px;
+    background-color: black;
+    margin-bottom: 5px;
+    &:nth-child(3) {
+      transform: translateX(-200%);
+      width: 20px;
+      margin: 0 0 0 auto;
+    }
+  }
+}
+.menu_button.clm-2 {
+  & > div {
+    animation: 0.5s kf-home-menu-button forwards;
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        animation-delay: 0.1s * $i;
+      }
+    }
+  }
+}
+
+@keyframes kf-home-circle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes kf-home-list {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    padding: 0px;
+    border-radius: 20%;
+    transform-origin: top right;
+    transform: translateX(2000%) scale(0);
+  }
+}
+
+@keyframes kf-home-menu-button {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }

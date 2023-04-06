@@ -5,18 +5,12 @@ import { SlideItem } from "../atoms/SlideItem";
 
 export const HomeTitle = () => {
   useEffect(() => {
-    const { init } = ScrollObserver(
-      ".home_title",
-      ".home_title",
-      {
-        once: false,
-      },
-      "https://source.unsplash.com/random"
-    );
-    init();
+    ScrollObserver(".home_title", ".home_title", "inView", {
+      once: false,
+    });
   }, []);
   return (
-    <Box mb={"20vh"}>
+    <Box mb={"30vh"}>
       <Box
         className="home_title"
         h={"100vh"}

@@ -1,8 +1,8 @@
 export const ScrollObserver = (
   ets: string,
   els: string,
-  opts: {},
-  url?: string
+  cls: string,
+  opts: {}
 ) => {
   const defaultOptions = {
     root: null,
@@ -15,20 +15,20 @@ export const ScrollObserver = (
   const options = Object.assign(defaultOptions, opts);
   const once = options.once;
 
-  const init = () => {
+  const _init = () => {
     const callback = (entries: any, observer: any) => {
       entries.forEach((entry: any) => {
         if (entry.isIntersecting) {
           elements.forEach((element) => {
-            element.classList.add("inView");
+            element.classList.add(cls);
           });
-          entry.target.classList.add("inView");
+          entry.target.classList.add(cls);
           if (once) {
             observer.unobserve(entry.target);
           }
         } else {
           elements.forEach((element) => {
-            element.classList.remove("inView");
+            element.classList.remove(cls);
           });
         }
       });
@@ -37,5 +37,5 @@ export const ScrollObserver = (
     entries.forEach((entry) => io.observe(entry));
   };
 
-  return { init };
+  _init();
 };
